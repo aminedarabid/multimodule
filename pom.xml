@@ -10,9 +10,11 @@
   <name>MultiModule</name>
   <url>http://maven.apache.org</url>
 
-  <properties>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-  </properties>
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
+	</properties>
 
   <dependencies>
     <dependency>
@@ -28,4 +30,29 @@
     <module>multimodule-service</module>
     <module>multimodule-web</module>
   </modules>
+<dependencyManagement>
+   <dependencies>
+  <dependency>
+   <groupId>${project.groupId}</groupId>
+   <artifactId>multimodule-domaine</artifactId>
+   <version>${project.version}</version>
+  </dependency>
+  <dependency>
+   <groupId>${project.groupId}</groupId>
+   <artifactId>multimodule-dao</artifactId>
+   <version>${project.version}</version>
+  </dependency>
+   <dependency>
+   <groupId>${project.groupId}</groupId>
+   <artifactId>multimodule-service</artifactId>
+   <version>${project.version}</version>
+  </dependency>
+  <dependency>
+   <groupId>${project.groupId}</groupId>
+   <artifactId>multimodule-web</artifactId>
+   <version>${project.version}</version>
+  </dependency>
+   </dependencies>
+  </dependencyManagement>
+  
 </project>
